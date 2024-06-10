@@ -181,11 +181,11 @@ h2 {
   font-weight: 700;
   font-size: 6.2rem;
 }
-h3{
+h3 {
   font-size: 5rem;
   font-family: "MyriadPro";
 }
-h4{
+h4 {
   font-size: 3rem;
   font-family: "MyriadPro";
 }
@@ -215,11 +215,11 @@ p span {
   justify-content: center;
   align-items: center;
 }
-.btn.disabled{
+.btn.disabled {
   cursor: not-allowed;
   opacity: 0.8;
 }
-.btn.active-label-btn{
+.btn.active-label-btn {
   background-color: #11b55d;
   border-color: #11b55d;
 }
@@ -283,14 +283,14 @@ p span {
   z-index: 10;
   padding: 0.7rem;
 }
-.hp-intro-steps .step.active{
-  background-color: #63CDF6;
+.hp-intro-steps .step.active {
+  background-color: #63cdf6;
 }
 .hp-intro-steps .step img {
   width: 100%;
   height: auto;
 }
-.label-text span{
+.label-text span {
   font-size: 4rem;
   font-family: "Noteworthy";
   font-weight: 700;
@@ -326,13 +326,13 @@ p span {
 .question-wrapper::-webkit-scrollbar-thumb:hover {
   background: #fcc993;
 }
-.question-wrapper .slick-track{
+.question-wrapper .slick-track {
   display: flex !important;
 }
-.question-wrapper .slick-slide{
+.question-wrapper .slick-slide {
   height: inherit;
 }
-.question-wrapper .slick-slide>div{
+.question-wrapper .slick-slide > div {
   height: 100%;
 }
 .single-question {
@@ -352,27 +352,28 @@ p span {
   width: 7.8rem;
   height: 7.8rem;
 }
-.single-question .question{
+.single-question .question {
   margin-top: 3rem;
 }
-.answer-wrapper{
+.answer-wrapper {
   margin-top: 5rem;
 }
-.answer-item{
+.answer-item {
   width: 38%;
   text-align: right;
   padding: 0.63rem 0;
   font-size: 2.6rem;
   font-weight: 400;
+  cursor: pointer;
 }
-.answer-item.active{
-  color: #FF9027;
+.answer-item.active {
+  color: #ff9027;
 }
-.answer-item:nth-of-type(even){
+.answer-item:nth-of-type(even) {
   text-align: left;
   margin-left: auto;
 }
-.answer-wrapper .range-box{
+.answer-wrapper .range-box {
   width: 9rem;
   height: 100%;
   position: absolute;
@@ -381,17 +382,17 @@ p span {
   transform: translateX(-50%);
   text-align: center;
 }
-.answer-wrapper .range-box .range-line{
+.answer-wrapper .range-box .range-line {
   width: 10px;
   margin: 0 auto;
   height: 100%;
   margin-top: 0.7rem;
 }
-.answer-wrapper .range-box .range-line img{
+.answer-wrapper .range-box .range-line img {
   height: 100%;
   width: auto;
 }
-.range-input-box{
+.range-input-box {
   position: absolute;
   top: 0.7rem;
   left: 0;
@@ -427,16 +428,16 @@ p span {
   width: 3.5rem;
   height: 8.6rem;
   /* background: linear-gradient(to top, white 50%, #FF9027 50%); */
-  background: linear-gradient(to top, white 50%, #FF9027 50%);
+  background: linear-gradient(to top, white 50%, #ff9027 50%);
   cursor: pointer;
   border-radius: 4rem;
   border: 1px solid #000;
   margin-top: -4rem; /* Centers the thumb on the track */
 }
-.vertical-slider.active::-webkit-slider-thumb{
+.vertical-slider.active::-webkit-slider-thumb {
   background: var(--thumb-color);
 }
-.vertical-slider:disabled::-webkit-slider-thumb{
+.vertical-slider:disabled::-webkit-slider-thumb {
   background: linear-gradient(to top, #e3e3e3 50%, #f5c08f 50%);
   cursor: not-allowed;
 }
@@ -454,16 +455,16 @@ p span {
 .vertical-slider::-moz-range-thumb {
   width: 3.5rem;
   height: 8.6rem;
-  background: linear-gradient(to top, white 50%,  #FF9027 50%);
+  background: linear-gradient(to top, white 50%, #ff9027 50%);
   cursor: pointer;
   border-radius: 4rem;
   border: 1px solid #000;
   margin-top: -4rem; /* Centers the thumb on the track */
 }
-.vertical-slider.active::-moz-range-thumb{
+.vertical-slider.active::-moz-range-thumb {
   background: var(--thumb-color);
 }
-.vertical-slider:disabled::-moz-range-thumb{
+.vertical-slider:disabled::-moz-range-thumb {
   background: linear-gradient(to top, #e3e3e3 50%, #f5c08f 50%);
   cursor: not-allowed;
 }
@@ -497,16 +498,16 @@ p span {
 .vertical-slider::-ms-thumb {
   width: 3.5rem;
   height: 8.6rem;
-  background: linear-gradient(to top, white 50%,  #FF9027 50%);
+  background: linear-gradient(to top, white 50%, #ff9027 50%);
   cursor: pointer;
   border-radius: 4rem;
   border: 1px solid #000;
   margin-top: -4rem; /* Centers the thumb on the track */
 }
-.vertical-slider.active::-ms-thumb{
+.vertical-slider.active::-ms-thumb {
   background: var(--thumb-color);
 }
-.vertical-slider:disabled::-ms-thumb{
+.vertical-slider:disabled::-ms-thumb {
   background: linear-gradient(to top, #e3e3e3 50%, #f5c08f 50%);
   cursor: not-allowed;
 }
@@ -559,5 +560,54 @@ input[type="range"]:focus-visible {
 @media screen and (max-width: 1280px) {
   html {
     font-size: 44%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .hp-intro-left {
+    width: 100%;
+    margin-bottom: 7rem;
+  }
+  .question-wrapper {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .hp-intro-left h1 br {
+    display: none;
+  }
+  .hp-intro-left p {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .single-question {
+    padding: 5rem 3rem;
+    margin: 0 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .single-question {
+    padding: 5rem 3rem;
+    margin: 0 0 4rem 0;
+  }
+}
+@media screen and (max-width: 450px){
+  html{
+    font-size: 1.6vw;
+  }
+  .hp-label-box,
+  .hp-intro-right{
+    width: 100%;
+    min-width: none;
   }
 }

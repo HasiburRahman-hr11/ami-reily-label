@@ -1,12 +1,45 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const SingleQuestion = ({ questionData, index, setLabels, labels, isComplete }) => {
+const SingleQuestion = ({
+  questionData,
+  index,
+  setLabels,
+  labels,
+  isComplete,
+}) => {
   const [value, setValue] = useState(
     Math.floor(questionData.answers.length / 2)
   );
-  const [activeColor, setActiveColor] = useState('#FF9027')
+  const [activeColor, setActiveColor] = useState("#FF9027");
 
-  const [colors, setColors] = useState(['#FF9027', '#fa9856', '#ee6f57', '#fabc60','#d65a31','#e6a4b4', '#a3de83','#ffd5be', '#d3a284', '#ea9085','#fdba9a','#ff6337','#fab57a','#e67a7a', '#f4adad','#ff8b00', '#ff8264', '#ffb03b', '#efa35c', '#aedadd', '#ffc7c7', '#d2ebcd', '#9ed9c5', '#ffc0d0', '#ffb677', '#e79e85']);
+  const [colors, setColors] = useState([
+    "#FF9027",
+    "#fa9856",
+    "#ee6f57",
+    "#fabc60",
+    "#d65a31",
+    "#e6a4b4",
+    "#a3de83",
+    "#ffd5be",
+    "#d3a284",
+    "#ea9085",
+    "#fdba9a",
+    "#ff6337",
+    "#fab57a",
+    "#e67a7a",
+    "#f4adad",
+    "#ff8b00",
+    "#ff8264",
+    "#ffb03b",
+    "#efa35c",
+    "#aedadd",
+    "#ffc7c7",
+    "#d2ebcd",
+    "#9ed9c5",
+    "#ffc0d0",
+    "#ffb677",
+    "#e79e85",
+  ]);
 
   useEffect(() => {
     const answerDiv = document.getElementById(`answerBox-${index + 1}`);
@@ -16,19 +49,48 @@ const SingleQuestion = ({ questionData, index, setLabels, labels, isComplete }) 
   });
 
   const handleChange = (index, labelWord, e) => {
-    e.target.classList.add('active')
+    e.target.classList.add("active");
     const newLabels = [...labels];
     newLabels[index] = labelWord;
     setLabels(newLabels);
 
-    const currentColor = colors[value] !== undefined ? colors[value] : '#FF9027';
+    const currentColor =
+      colors[value] !== undefined ? colors[value] : "#FF9027";
     setActiveColor(currentColor);
-    if(Number.parseInt(value) % 2 === 0){
-      e.target.style.setProperty("--thumb-color", `linear-gradient(to top, ${currentColor} 50%, white 50%)`);
-    }else{
-      e.target.style.setProperty("--thumb-color", `linear-gradient(to top, white 50%, ${currentColor} 50%)`);
+    if (Number.parseInt(value) % 2 === 0) {
+      e.target.style.setProperty(
+        "--thumb-color",
+        `linear-gradient(to top, ${currentColor} 50%, white 50%)`
+      );
+    } else {
+      e.target.style.setProperty(
+        "--thumb-color",
+        `linear-gradient(to top, white 50%, ${currentColor} 50%)`
+      );
     }
+  };
 
+  const handleLabelClick = (index, labelWord, input) => {
+    
+    input.classList.add("active");
+    const newLabels = [...labels];
+    newLabels[index] = labelWord;
+    setLabels(newLabels);
+
+    const currentColor =
+      colors[value] !== undefined ? colors[value] : "#FF9027";
+    setActiveColor(currentColor);
+    if (Number.parseInt(value) % 2 === 0) {
+      input.style.setProperty(
+        "--thumb-color",
+        `linear-gradient(to top, ${currentColor} 50%, white 50%)`
+      );
+    } else {
+      input.style.setProperty(
+        "--thumb-color",
+        `linear-gradient(to top, white 50%, ${currentColor} 50%)`
+      );
+    }
   };
 
   // Create a ref for the input element
@@ -52,7 +114,10 @@ const SingleQuestion = ({ questionData, index, setLabels, labels, isComplete }) 
       <div className="question-number circle-center-text mx-auto">
         {index + 1}
       </div>
-      <h4 className="text-center question" dangerouslySetInnerHTML={{__html:questionData.question}}></h4>
+      <h4
+        className="text-center question"
+        dangerouslySetInnerHTML={{ __html: questionData.question }}
+      ></h4>
       <div className="answer-wrapper relative">
         <div className="range-box">
           <div className="range-line">
@@ -74,8 +139,8 @@ const SingleQuestion = ({ questionData, index, setLabels, labels, isComplete }) 
                 handleChange(index, labelWord, e);
                 setValue(e.target.value);
               }}
-              style={{ '--thumb-color': colors[0] }}
-              disabled={labels[index -1] === null || isComplete}
+              style={{ "--thumb-color": colors[0] }}
+              disabled={labels[index - 1] === null || isComplete}
             />
           </div>
         </div>
@@ -87,7 +152,21 @@ const SingleQuestion = ({ questionData, index, setLabels, labels, isComplete }) 
                 Number.parseInt(value) === Number.parseInt(i + 1) && "active"
               }`}
               key={i}
-              style={{color: Number.parseInt(value) === Number.parseInt(i + 1) && activeColor}}
+              style={{
+                color:
+                  Number.parseInt(value) === Number.parseInt(i + 1) &&
+                  activeColor,
+              }}
+              onClick={() => {
+                const rangeInput = document.getElementById(
+                  `answerRange-${index + 1}`
+                );
+                if(labels[index - 1] === null || isComplete){
+                  return;
+                }
+                setValue(i + 1);
+                handleLabelClick(index, answerData.labelWord, rangeInput);
+              }}
             >
               {answerData.answer}
             </div>

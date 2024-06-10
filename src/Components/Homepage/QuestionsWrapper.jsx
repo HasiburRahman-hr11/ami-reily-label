@@ -15,16 +15,20 @@ let settings = {
   centerMode: false,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1025,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 640,
+      breakpoint: 901,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 1.3,
       },
+    },
+    {
+      breakpoint: 641,
+      settings: "unslick", // Destroys slick at this breakpoint
     },
   ],
 };
