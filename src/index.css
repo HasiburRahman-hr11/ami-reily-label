@@ -368,6 +368,7 @@ p span {
 }
 .answer-item.active {
   color: #ff9027;
+  /* pointer-events: none; */
 }
 .answer-item:nth-of-type(even) {
   text-align: left;

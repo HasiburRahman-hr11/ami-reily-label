@@ -70,25 +70,24 @@ const SingleQuestion = ({
     }
   };
 
-  const handleLabelClick = (index, labelWord, input) => {
-    
+  const handleLabelClick = (index, labelWord, input, value) => {
     input.classList.add("active");
     const newLabels = [...labels];
     newLabels[index] = labelWord;
     setLabels(newLabels);
-
+    setValue(value);
     const currentColor =
       colors[value] !== undefined ? colors[value] : "#FF9027";
     setActiveColor(currentColor);
     if (Number.parseInt(value) % 2 === 0) {
       input.style.setProperty(
         "--thumb-color",
-        `linear-gradient(to top, ${currentColor} 50%, white 50%)`
+        `linear-gradient(to top, white 50%, ${currentColor} 50%)`
       );
     } else {
       input.style.setProperty(
         "--thumb-color",
-        `linear-gradient(to top, white 50%, ${currentColor} 50%)`
+        `linear-gradient(to top, ${currentColor} 50%, white 50%)`
       );
     }
   };
@@ -134,6 +133,7 @@ const SingleQuestion = ({
               max={questionData.answers.length}
               id={`answerRange-${index + 1}`}
               onChange={(e) => {
+                console.log(e.target.value);
                 const answerIndex = e.target.value - 1;
                 const labelWord = questionData.answers[answerIndex].labelWord;
                 handleChange(index, labelWord, e);
@@ -149,7 +149,9 @@ const SingleQuestion = ({
           {questionData.answers.map((answerData, i) => (
             <div
               className={`answer-item ${
-                Number.parseInt(value) === Number.parseInt(i + 1) && "active"
+                Number.parseInt(value) === Number.parseInt(i + 1)
+                  ? "active"
+                  : ""
               }`}
               key={i}
               style={{
@@ -161,11 +163,16 @@ const SingleQuestion = ({
                 const rangeInput = document.getElementById(
                   `answerRange-${index + 1}`
                 );
-                if(labels[index - 1] === null || isComplete){
+                if (labels[index - 1] === null || isComplete) {
                   return;
                 }
-                setValue(i + 1);
-                handleLabelClick(index, answerData.labelWord, rangeInput);
+
+                handleLabelClick(
+                  index,
+                  answerData.labelWord,
+                  rangeInput,
+                  i + 1
+                );
               }}
             >
               {answerData.answer}
