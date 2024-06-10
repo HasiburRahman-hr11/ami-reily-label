@@ -9,7 +9,7 @@ let settings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 2.5,
+  slidesToShow: 2.1,
   slidesToScroll: 1,
   arrows: false,
   centerMode: false,

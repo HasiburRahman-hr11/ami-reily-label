@@ -135,7 +135,9 @@ const SingleQuestion = ({
               onChange={(e) => {
                 console.log(e.target.value);
                 const answerIndex = e.target.value - 1;
-                const labelWord = questionData.answers[answerIndex].labelWord;
+                // const labelWord = questionData.answers[answerIndex].labelWord;
+                const labelWord =
+                  questionData.answers[answerIndex].answer.charAt(0);
                 handleChange(index, labelWord, e);
                 setValue(e.target.value);
               }}
@@ -169,7 +171,8 @@ const SingleQuestion = ({
 
                 handleLabelClick(
                   index,
-                  answerData.labelWord,
+                  // answerData.labelWord,
+                  answerData.answer.charAt(0),
                   rangeInput,
                   i + 1
                 );
