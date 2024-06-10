@@ -65,7 +65,7 @@ export const questionAnswers = [
   },
   {
     _id: "03",
-    question: "I would like to add, subtract or replace these body parts: ",
+    question: "I would like to add, subtract or replace  <br /> these body parts: ",
     answers: [
       { answer: "Tummy", labelWord: "A" },
       { answer: "Boobs", labelWord: "B" },
