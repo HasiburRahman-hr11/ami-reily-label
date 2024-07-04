@@ -22,7 +22,7 @@ const IntroSection = ({ labels , setIsComplete}) => {
         <div className="flex justify-between">
           <div className="hp-intro-left hp-intro-col">
             <h1>
-              Create your own custom label by answering the <br />
+              Create your own custom label by answering the
               <span>5</span> questions below!
             </h1>
             <p>

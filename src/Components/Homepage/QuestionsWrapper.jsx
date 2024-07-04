@@ -42,18 +42,16 @@ const QuestionsWrapper = ({ setLabels, labels, isComplete }) => {
         ))}
       </div> */}
       <div className="question-wrapper">
-        <Slider {...settings}>
-          {questionAnswers.map((questionData, index) => (
-            <SingleQuestion
-              key={questionData._id}
-              questionData={questionData}
-              index={index}
-              setLabels={setLabels}
-              labels={labels}
-              isComplete={isComplete}
-            />
-          ))}
-        </Slider>
+        {questionAnswers.map((questionData, index) => (
+          <SingleQuestion
+            key={questionData._id}
+            questionData={questionData}
+            index={index}
+            setLabels={setLabels}
+            labels={labels}
+            isComplete={isComplete}
+          />
+        ))}
       </div>
     </section>
   );

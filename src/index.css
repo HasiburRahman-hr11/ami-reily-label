@@ -173,20 +173,20 @@ ul {
 h1 {
   font-family: "Noteworthy";
   font-weight: 700;
-  font-size: 8.2rem;
+  font-size: 6rem;
   line-height: 1.2;
 }
 h2 {
   font-family: "Noteworthy";
   font-weight: 700;
-  font-size: 6.2rem;
+  font-size: 5.2rem;
 }
 h3 {
   font-size: 5rem;
   font-family: "MyriadPro";
 }
 h4 {
-  font-size: 3rem;
+  font-size: 1.53rem;
   font-family: "MyriadPro";
 }
 h1 span,
@@ -230,7 +230,7 @@ p span {
   padding: 12rem 0;
 }
 .hp-intro-left {
-  width: 55%;
+  width: 58%;
 }
 .hp-intro-left h1 {
   font-weight: normal;
@@ -241,11 +241,13 @@ p span {
   font-size: 2.6rem;
   font-weight: normal;
   font-family: "Noteworthy";
-  max-width: 60rem;
 }
 .hp-intro-right {
   width: max-content;
   min-width: 48rem;
+}
+.hp-intro-right h2{
+  font-weight: 300;
 }
 .hp-label-box {
   background-color: #fff1e2;
@@ -253,7 +255,7 @@ p span {
   border-radius: 5rem;
   padding: 2rem 2rem;
   width: 48rem;
-  min-height: 24rem;
+  min-height: 16rem;
   margin-top: 3rem;
 }
 .hp-intro-steps {
@@ -299,11 +301,14 @@ p span {
   padding-bottom: 10rem;
 }
 .question-wrapper {
-  width: 93%;
-  margin-left: auto;
-  /* overflow-x: auto;
-  display: flex; */
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
 }
+
 /* width */
 .question-wrapper::-webkit-scrollbar {
   height: 7px;
@@ -337,30 +342,33 @@ p span {
 }
 .single-question {
   background-color: #fff1e2;
-  padding: 5rem 2rem;
-  border-radius: 5rem;
-  margin: 2rem 2rem;
-  margin: 0 2rem;
+  padding: 3rem 2rem;
+  border-radius: 3rem;
+  width: 16.5%;
+  height: inherit;
+}
+.single-question:nth-of-type(5n){
+  width: 28%;
 }
 .question-number {
   background-color: #63cdf6;
   color: #fff;
-  font-size: 5rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  width: 7.8rem;
-  height: 7.8rem;
+  width: 3.8rem;
+  height: 3.8rem;
 }
 .single-question .question {
   margin-top: 3rem;
+  min-height: 4rem;
 }
 .answer-wrapper {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 .answer-item {
   width: 41%;
   text-align: right;
-  padding: 0.63rem 0;
-  font-size: 1.9rem;
+  font-size: 1.4rem;
   font-weight: 400;
   cursor: pointer;
 }
@@ -373,7 +381,7 @@ p span {
   margin-left: auto;
 }
 .answer-wrapper .range-box {
-  width: 9rem;
+  width: 6rem;
   height: 100%;
   position: absolute;
   top: 0;
@@ -393,7 +401,7 @@ p span {
 }
 .range-input-box {
   position: absolute;
-  top: 0.7rem;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -424,14 +432,14 @@ p span {
 .vertical-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 3.5rem;
-  height: 8.6rem;
+  width: 1.8rem;
+  height: 4.2rem;
   /* background: linear-gradient(to top, white 50%, #FF9027 50%); */
   background: linear-gradient(to top, white 50%, #ff9027 50%);
   cursor: pointer;
   border-radius: 4rem;
   border: 1px solid #000;
-  margin-top: -4rem; /* Centers the thumb on the track */
+  margin-top: -1.6rem; /* Centers the thumb on the track */
 }
 .vertical-slider.active::-webkit-slider-thumb {
   background: var(--thumb-color);
@@ -561,6 +569,19 @@ input[type="range"]:focus-visible {
     font-size: 44%;
   }
 }
+@media screen and (max-width: 1200px){
+  .question-wrapper{
+    justify-content: flex-start;
+  }
+  .single-question{
+    width: 22%;
+    margin: 0 1.5% 4rem 1.5%;
+  }
+  .single-question:nth-of-type(5n){
+    width: max-content;
+    min-width: 400px;
+  }
+}
 @media screen and (max-width: 1024px) {
   h1 {
     font-size: 6rem;
@@ -586,15 +607,35 @@ input[type="range"]:focus-visible {
   .hp-intro-left p {
     max-width: 100%;
   }
+  .single-question{
+    width: 30%;
+  }
 }
 @media screen and (max-width: 768px) {
+  .question-wrapper{
+    justify-content: space-between;
+  }
   .single-question {
+    width: 48%;
     padding: 5rem 3rem;
-    margin: 0 1.5rem;
+    margin: 2rem 0;
   }
 }
 
 @media screen and (max-width: 640px) {
+  h1 {
+    font-size: 5rem;
+}
+  h4{
+    font-size: 2.5rem;
+  }
+  .hp-intro-left,
+  .hp-intro-right h2{
+    text-align: center;
+  }
+  .hp-intro-left p{
+    font-size: 2.8rem;
+  }
   .single-question {
     padding: 5rem 1rem;
     margin: 0 0 4rem 0;
@@ -620,6 +661,11 @@ input[type="range"]:focus-visible {
     width: 3rem;
     height: 6rem;
     margin-top: -2.5rem;
+  }
+  .single-question,
+  .single-question:nth-of-type(5n) {
+    width: 100%;
+    min-width: unset;
   }
 }
 @media screen and (max-width: 450px) {
