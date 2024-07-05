@@ -8,7 +8,7 @@ const App = () => {
   const [labels, setLabels] = useState(new Array(questionAnswers.length).fill(null));
   const [isComplete, setIsComplete] = useState(false);
   return (
-    <main>
+    <main className='relative'>
       <IntroSection labels={labels} setIsComplete={setIsComplete} />
       <QuestionsWrapper labels={labels} setLabels={setLabels} isComplete={isComplete} />
     </main>
