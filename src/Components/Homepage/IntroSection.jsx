@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+
+import { useReactToPrint } from "react-to-print";
 
 const IntroSection = ({ labels, setIsComplete }) => {
   const [activeBtn, setActiveBtn] = useState(!labels.includes(null));
@@ -34,6 +36,12 @@ const IntroSection = ({ labels, setIsComplete }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const printRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    content: () => printRef.current,
+  });
   return (
     <>
       <section className="bg-white hp-intro-section">
@@ -57,26 +65,35 @@ const IntroSection = ({ labels, setIsComplete }) => {
                 scrolled ? "scrolled" : ""
               }`}
             >
-              <h2 className="capitalize">hello, my label is</h2>
-              <div className="hp-label-box flex justify-center align-center">
-                {showLabel ? (
-                  <div className="flex justify-center align-center label-text">
-                    {labels.map((label, index) => (
-                      <span key={index}>{label}</span>
-                    ))}
-                  </div>
-                ) : (
-                  <button
-                    className={`btn btn-black ${
-                      activeBtn === false ? "disabled" : "active-label-btn"
-                    }`}
-                    onClick={handleGenerateLabel}
-                    disabled={!activeBtn}
-                  >
-                    Generate My Label
-                  </button>
-                )}
+              <div className="print-box" ref={printRef}>
+                <h2 className="capitalize">hello, my label is</h2>
+                <div className="hp-label-box flex justify-center align-center">
+                  {showLabel ? (
+                    <div className="flex justify-center align-center label-text">
+                      {labels.map((label, index) => (
+                        <span key={index}>{label}</span>
+                      ))}
+                    </div>
+                  ) : (
+                    <button
+                      className={`btn btn-black ${
+                        activeBtn === false ? "disabled" : "active-label-btn"
+                      }`}
+                      onClick={handleGenerateLabel}
+                      disabled={!activeBtn}
+                    >
+                      Generate My Label
+                    </button>
+                  )}
+                </div>
               </div>
+              {showLabel && (
+                <div className="flex justify-center align-center print-label-box">
+                  <button className="print-label-btn btn" onClick={handlePrint}>
+                    Print My Label
+                  </button>
+                </div>
+              )}
               <div className="hp-intro-steps flex align-center justify-between relative">
                 {labels.map((label, index) => (
                   <span

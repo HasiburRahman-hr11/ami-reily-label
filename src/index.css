@@ -18,7 +18,12 @@
   font-weight: 400;
   font-style: normal;
 }
-
+@media print {
+  .print-box,
+  .print-box *{
+    font-family: "Noteworthy";
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -231,6 +236,10 @@ p span {
 .desktop-none {
   display: none;
 }
+.print-label-btn{
+  background-color: #FF9027;
+  color: #fff;
+}
 /* ------------------------- */
 /* HOMEPAGE STYLES */
 /* --------------------------- */
@@ -265,6 +274,12 @@ p span {
   width: 48rem;
   min-height: 16rem;
   margin-top: 3rem;
+}
+.print-label-box{
+  padding-top: 2rem;
+}
+.print-box{
+  padding: 2rem;
 }
 .hp-intro-steps {
   margin-top: 8rem;
@@ -374,7 +389,7 @@ p span {
   margin-top: 3rem;
 }
 .answer-item {
-  width: 41%;
+  width: 40%;
   text-align: right;
   font-size: 1.4rem;
   font-weight: 400;

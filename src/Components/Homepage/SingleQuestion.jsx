@@ -13,33 +13,27 @@ const SingleQuestion = ({
   const [activeColor, setActiveColor] = useState("#FF9027");
 
   const [colors, setColors] = useState([
-    "#FF9027",
-    "#fa9856",
-    "#ee6f57",
-    "#fabc60",
-    "#d65a31",
-    "#e6a4b4",
-    "#a3de83",
-    "#ffd5be",
-    "#d3a284",
-    "#ea9085",
-    "#fdba9a",
-    "#ff6337",
-    "#fab57a",
-    "#e67a7a",
-    "#f4adad",
-    "#ff8b00",
-    "#ff8264",
-    "#ffb03b",
-    "#efa35c",
-    "#aedadd",
-    "#ffc7c7",
-    "#d2ebcd",
-    "#9ed9c5",
-    "#ffc0d0",
-    "#ffb677",
-    "#e79e85",
-  ]);
+    "#FF5733", // Bright Red
+    "#FF8D33", // Bright Orange
+    "#FFC300", // Bright Yellow
+    "#DAF7A6", // Bright Light Green
+    "#33FF57", // Bright Green
+    "#33FFBD", // Bright Teal
+    "#33FFF6", // Bright Cyan
+    "#33AFFF", // Bright Light Blue
+    "#3385FF", // Bright Blue
+    "#6B33FF", // Bright Purple
+    "#B833FF", // Bright Magenta
+    "#FF33A6", // Bright Pink
+    "#FF3370", // Bright Rose
+    "#FF3391", // Bright Fuchsia
+    "#FF3366", // Bright Coral
+    "#FF5757", // Bright Salmon
+    "#FFD133", // Bright Gold
+    "#FF9033", // Bright Mandarin
+    "#FFD700", // Bright Amber
+    "#FF5733"  // Bright Flame
+]);
 
   useEffect(() => {
     const answerDiv = document.getElementById(`answerBox-${index + 1}`);
