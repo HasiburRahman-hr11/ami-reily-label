@@ -7,7 +7,6 @@ const SingleQuestion = ({
   labels,
   isComplete,
 }) => {
-
   const [value, setValue] = useState(
     Math.floor(questionData.answers.length / 2)
   );
@@ -114,16 +113,15 @@ const SingleQuestion = ({
     const slider = inputRef.current;
 
     const preventTouch = (e) => {
-      e.preventDefault();
       e.stopPropagation();
     };
 
-    slider.addEventListener('touchstart', preventTouch, { passive: false });
-    slider.addEventListener('touchmove', preventTouch, { passive: false });
+    slider.addEventListener("touchstart", preventTouch, { passive: false });
+    slider.addEventListener("touchmove", preventTouch, { passive: false });
 
     return () => {
-      slider.removeEventListener('touchstart', preventTouch);
-      slider.removeEventListener('touchmove', preventTouch);
+      slider.removeEventListener("touchstart", preventTouch);
+      slider.removeEventListener("touchmove", preventTouch);
     };
   }, []);
   return (
