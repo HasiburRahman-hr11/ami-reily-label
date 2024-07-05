@@ -60,6 +60,7 @@ const IntroSection = ({ labels, setIsComplete }) => {
                 shirt!
               </p>
             </div>
+            {scrolled && <div className="empty-scrolled"></div>}
             <div
               className={`hp-intro-right hp-intro-col ${
                 scrolled ? "scrolled" : ""
