@@ -5,35 +5,29 @@ const SingleQuestion = ({
   index,
   setLabels,
   labels,
-  isComplete,
+  isComplete
 }) => {
-  const [value, setValue] = useState(
-    Math.floor(questionData.answers.length / 2)
-  );
+  const [value, setValue] = useState('');
   const [activeColor, setActiveColor] = useState("#FF9027");
 
   const [colors, setColors] = useState([
-    "#FF5733", // Bright Red
-    "#FF8D33", // Bright Orange
-    "#FFC300", // Bright Yellow
-    "#DAF7A6", // Bright Light Green
-    "#33FF57", // Bright Green
-    "#33FFBD", // Bright Teal
-    "#33FFF6", // Bright Cyan
-    "#33AFFF", // Bright Light Blue
-    "#3385FF", // Bright Blue
-    "#6B33FF", // Bright Purple
-    "#B833FF", // Bright Magenta
-    "#FF33A6", // Bright Pink
-    "#FF3370", // Bright Rose
-    "#FF3391", // Bright Fuchsia
-    "#FF3366", // Bright Coral
-    "#FF5757", // Bright Salmon
-    "#FFD133", // Bright Gold
-    "#FF9033", // Bright Mandarin
-    "#FFD700", // Bright Amber
-    "#FF5733"  // Bright Flame
-]);
+    "#F3E500",
+    "#66CC33",
+    "#F4A6D7",
+    "#A174A5",
+    "#E23636",
+    "#5AAB4B",
+    "#BC70A4",
+    "#FFA500",
+    "#F3E500",
+    "#66CC33",
+    "#F4A6D7",
+    "#A174A5",
+    "#E23636",
+    "#5AAB4B",
+    "#BC70A4",
+    "#FFA500",
+  ]);
 
   useEffect(() => {
     const answerDiv = document.getElementById(`answerBox-${index + 1}`);
@@ -119,7 +113,21 @@ const SingleQuestion = ({
     };
   }, []);
   return (
-    <div className="single-question h-100">
+    <div
+      className={`single-question relative h-100 ${
+        labels[index - 1] === null ? "disabled" : ""
+      }`}
+      // onClick={() => {
+      //   if(labels[index - 1] === null){
+      //     return alert(`Please answer Question-${index} first.`)
+      //   }
+      // }}
+    >
+      {/* {labels[index - 1] === null && (
+        <div className="lock-question">
+          <img src="images/lock.png" alt="" />
+        </div>
+      )} */}
       <div className="question-number circle-center-text mx-auto">
         {index + 1}
       </div>
@@ -187,9 +195,8 @@ const SingleQuestion = ({
                   i + 1
                 );
               }}
-            >
-              {answerData.answer}
-            </div>
+              dangerouslySetInnerHTML={{ __html: answerData.answer }}
+            ></div>
           ))}
         </div>
       </div>

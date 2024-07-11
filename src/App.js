@@ -1,18 +1,13 @@
-import React, { useState } from 'react'
-import IntroSection from './Components/Homepage/IntroSection'
-import QuestionsWrapper from './Components/Homepage/QuestionsWrapper';
+import React from "react";
 
-import { questionAnswers } from "./questionAnswers";
+import Home from "./Pages/Home";
 
 const App = () => {
-  const [labels, setLabels] = useState(new Array(questionAnswers.length).fill(null));
-  const [isComplete, setIsComplete] = useState(false);
   return (
-    <main className='relative'>
-      <IntroSection labels={labels} setIsComplete={setIsComplete} />
-      <QuestionsWrapper labels={labels} setLabels={setLabels} isComplete={isComplete} />
-    </main>
-  )
-}
+    <>
+      <Home />
+    </>
+  );
+};
 
-export default App
+export default App;
