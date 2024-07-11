@@ -115,9 +115,7 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
                     >
                       Reset
                     </button>
-                    <p>
-                      <p>It’s SO who I am!</p>
-                    </p>
+                    <p>It’s SO NOT who I am!</p>
                   </div>
                 </div>
               )}
