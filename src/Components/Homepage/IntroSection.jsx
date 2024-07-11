@@ -111,9 +111,12 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
                   <div>
                     <button
                       className="print-reset-btn btn"
-                      onClick={handleReset}
+                      onClick={() => {
+                        // handleReset()
+                        window.location.reload();
+                      }}
                     >
-                      Reset
+                      Retry
                     </button>
                     <p>It’s SO NOT who I am!</p>
                   </div>
