@@ -20,10 +20,10 @@
 }
 @media print {
   .print-box,
-  .print-box *{
+  .print-box * {
     font-family: "Noteworthy";
   }
-  .print-box .btn-box{
+  .print-box .btn-box {
     display: none;
   }
 }
@@ -241,8 +241,8 @@ p span {
 .desktop-none {
   display: none;
 }
-.print-label-btn{
-  background-color: #FF9027;
+.print-label-btn {
+  background-color: #ff9027;
   color: #fff;
 }
 /* ------------------------- */
@@ -271,29 +271,29 @@ p span {
 
 .hp-label-box {
   background-color: #fff1e2;
-  border: 0.5rem solid #FF9027;
+  border: 0.5rem solid #ff9027;
   border-radius: 2.5rem;
   padding: 3rem 2rem;
   width: 55rem;
   min-height: 25rem;
 }
-.hp-label-box h3{
+.hp-label-box h3 {
   margin-bottom: 2rem;
   font-weight: 300;
-  color: #FF9027;
+  color: #ff9027;
   font-family: "Noteworthy";
   font-size: 4rem;
 }
-.print-label-box{
+.print-label-box {
   padding-top: 2rem;
 }
-.hp-label-box .btn-box > div{
+.hp-label-box .btn-box > div {
   width: 50%;
   text-align: center;
   margin-top: 2rem;
   padding: 0 2rem;
 }
-.hp-label-box .btn-box .btn{
+.hp-label-box .btn-box .btn {
   width: 16rem;
   height: 4.5rem;
   display: flex;
@@ -304,7 +304,7 @@ p span {
   position: relative;
   margin: 0 auto;
 }
-.btn .btn-icon{
+.btn .btn-icon {
   position: absolute;
   top: 50%;
   left: 2rem;
@@ -314,25 +314,25 @@ p span {
   align-items: center;
   width: max-content;
 }
-.btn .btn-icon img{
+.btn .btn-icon img {
   width: 100%;
   max-width: 2rem;
   max-height: 2rem;
   object-fit: contain;
 }
-.hp-label-box .btn-box  p{
+.hp-label-box .btn-box p {
   font-weight: 400;
   margin-top: 1rem;
   font-size: 1.4rem;
 }
-.print-label-box .btn{
+.print-label-box .btn {
   width: 85%;
 }
-.print-reset-btn{
+.print-reset-btn {
   background-color: #000;
   color: #fff;
 }
-.print-box{
+.print-box {
   padding: 2rem;
 }
 .hp-intro-steps {
@@ -447,7 +447,7 @@ p span {
   opacity: 0.6;
   cursor: not-allowed;
 } */
-.lock-question{
+.lock-question {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -459,7 +459,7 @@ p span {
   top: 0;
   z-index: 99;
 }
-.lock-question img{
+.lock-question img {
   display: inline-block;
   width: 80px;
   opacity: 0.7;
@@ -736,9 +736,9 @@ input[type="range"]:focus-visible {
   .hp-intro-section{
     padding-bottom: 0;
   } */
-   .hp-intro-right{
+  .hp-intro-right {
     position: static;
-   }
+  }
   .hp-intro-right.scrolled {
     position: fixed !important;
     background-color: #fff;
@@ -752,7 +752,7 @@ input[type="range"]:focus-visible {
     z-index: 10;
     transition: all 0.5s ease;
   }
-  .empty-scrolled{
+  .empty-scrolled {
     min-height: 400px;
   }
   @keyframes smoothScroll {
@@ -765,7 +765,7 @@ input[type="range"]:focus-visible {
       opacity: 1;
     }
   }
-  .hp-label-box{
+  .hp-label-box {
     margin: 3rem auto 0 auto;
   }
   .question-wrapper {
@@ -806,7 +806,7 @@ input[type="range"]:focus-visible {
     padding: 5rem 1rem;
     margin: 0 0 4rem 0;
   }
-  .question-number{
+  .question-number {
     width: 4.8rem;
     height: 4.8rem;
   }
@@ -836,6 +836,18 @@ input[type="range"]:focus-visible {
   .single-question:nth-of-type(5n) {
     width: 100%;
     min-width: unset;
+  }
+  .hp-label-box .btn-box .btn {
+    width: 18rem;
+    height: 5rem;
+    font-size: 1.7rem;
+  }
+  .btn .btn-icon img {
+    max-width: 2.2rem;
+    max-height: 2.2rem;
+  }
+  .hp-label-box .btn-box p {
+    font-size: 1.7rem;
   }
 }
 @media screen and (max-width: 450px) {
