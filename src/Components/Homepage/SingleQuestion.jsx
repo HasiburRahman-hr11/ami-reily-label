@@ -5,12 +5,13 @@ const SingleQuestion = ({
   index,
   setLabels,
   labels,
-  isComplete
+  isComplete,
 }) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const [activeColor, setActiveColor] = useState("#FF9027");
 
   const [colors, setColors] = useState([
+    "#FF8F27",
     "#F3E500",
     "#66CC33",
     "#F4A6D7",
@@ -37,7 +38,7 @@ const SingleQuestion = ({
   });
 
   const handleChange = (index, labelWord, e) => {
-    const audio = new Audio('/audio/slider-effect-2.mp3');
+    const audio = new Audio("/audio/slider-effect-2.mp3");
     audio.play();
 
     e.target.classList.add("active");
@@ -49,8 +50,6 @@ const SingleQuestion = ({
       colors[value] !== undefined ? colors[value] : "#FF9027";
     setActiveColor(currentColor);
 
-    
-    
     if (Number.parseInt(value) % 2 === 0) {
       e.target.style.setProperty(
         "--thumb-color",
@@ -65,8 +64,7 @@ const SingleQuestion = ({
   };
 
   const handleLabelClick = (index, labelWord, input, value) => {
-
-    const audio = new Audio('/audio/slider-effect-2.mp3');
+    const audio = new Audio("/audio/slider-effect-2.mp3");
     audio.play();
 
     input.classList.add("active");

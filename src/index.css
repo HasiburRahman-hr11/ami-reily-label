@@ -272,10 +272,12 @@ p span {
   width: 48rem;
   min-height: 21rem;
 }
-.hp-label-box h2{
+.hp-label-box h3{
   margin-bottom: 2rem;
   font-weight: 300;
   color: #FF9027;
+  font-family: "Noteworthy";
+  font-size: 4rem;
 }
 .print-label-box{
   padding-top: 2rem;
@@ -300,7 +302,7 @@ p span {
   padding: 2rem;
 }
 .hp-intro-steps {
-  margin-top: 8rem;
+  margin-top: 5rem;
 }
 .hp-intro-steps::before {
   content: "";
@@ -334,9 +336,10 @@ p span {
   height: auto;
 }
 .label-text span {
-  font-size: 6rem;
+  font-size: 6.5rem;
   font-family: "Noteworthy";
   font-weight: 700;
+  margin: 0 5px;
 }
 .question-section {
   padding-bottom: 10rem;
@@ -760,7 +763,7 @@ input[type="range"]:focus-visible {
   }
 
   .hp-intro-steps {
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   .hp-intro-section {
     padding-bottom: 6rem;

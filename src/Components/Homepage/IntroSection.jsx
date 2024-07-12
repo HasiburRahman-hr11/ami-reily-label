@@ -76,7 +76,7 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
               <div className="print-box" ref={printRef}>
                 <div className="hp-label-box flex justify-center align-center">
                   <div className="text-center">
-                    <h2 className="">hello, my label is</h2>
+                    <h3 className="">hello, my label is</h3>
                     {showLabel ? (
                       <div className="flex justify-center align-center label-text">
                         {labels.map((label, index) => (
