@@ -74,18 +74,50 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
               }`}
             >
               <div className="print-box" ref={printRef}>
-                <div className="hp-label-box flex justify-center align-center">
-                  <div className="text-center">
+                <div className="hp-label-box text-center flex justify-center align-center">
+                  <div>
                     <h3 className="">hello, my label is</h3>
                     {showLabel ? (
-                      <div className="flex justify-center align-center label-text">
-                        {labels.map((label, index) => (
-                          <span key={index}>{label}</span>
-                        ))}
-                      </div>
+                      <>
+                        <div className="flex justify-center align-center label-text">
+                          {labels.map((label, index) => (
+                            <span key={index}>{label}</span>
+                          ))}
+                        </div>
+                        <div className="flex justify-between align-center btn-box">
+                          <div>
+                            <button
+                              className="print-reset-btn btn"
+                              onClick={() => {
+                                // handleReset()
+                                window.location.reload();
+                              }}
+                            >
+                              <span className="btn-icon">
+                                <img src="/images/retry.png" alt="Print Icon" />
+                              </span>
+                              Retry
+                            </button>
+                            <p>It’s SO NOT who I am!</p>
+                          </div>
+
+                          <div className="">
+                            <button
+                              className="print-label-btn btn"
+                              onClick={handlePrint}
+                            >
+                              <span className="btn-icon">
+                                <img src="/images/print.png" alt="Print Icon" />
+                              </span>
+                              Print
+                            </button>
+                            <p>It’s SO who I am!</p>
+                          </div>
+                        </div>
+                      </>
                     ) : (
                       <button
-                        className={`btn btn-black ${
+                        className={`btn btn-black preview-btn ${
                           activeBtn === false ? "disabled" : "active-label-btn"
                         }`}
                         onClick={handleGenerateLabel}
@@ -97,31 +129,7 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
                   </div>
                 </div>
               </div>
-              {showLabel && (
-                <div className="flex justify-between align-center print-label-box">
-                  <div className="">
-                    <button
-                      className="print-label-btn btn"
-                      onClick={handlePrint}
-                    >
-                      Print
-                    </button>
-                    <p>It’s SO who I am!</p>
-                  </div>
-                  <div>
-                    <button
-                      className="print-reset-btn btn"
-                      onClick={() => {
-                        // handleReset()
-                        window.location.reload();
-                      }}
-                    >
-                      Retry
-                    </button>
-                    <p>It’s SO NOT who I am!</p>
-                  </div>
-                </div>
-              )}
+
               <div className="hp-intro-steps flex align-center justify-between relative">
                 {labels.map((label, index) => (
                   <span
