@@ -234,8 +234,9 @@ p span {
   opacity: 0.8;
 }
 .btn.active-label-btn {
-  background-color: #11b55d;
-  border-color: #11b55d;
+  /* background-color: #11b55d;
+  border-color: #11b55d; */
+  opacity: 1;
 }
 .desktop-none {
   display: none;

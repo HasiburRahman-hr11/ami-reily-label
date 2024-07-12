@@ -39,7 +39,9 @@ const SingleQuestion = ({
 
   const handleChange = (index, labelWord, e) => {
     const audio = new Audio("/audio/slider-effect-2.mp3");
-    audio.play();
+    if(audio){
+      audio.play();
+    }
 
     e.target.classList.add("active");
     const newLabels = [...labels];
