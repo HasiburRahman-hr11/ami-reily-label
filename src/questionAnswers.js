@@ -16,9 +16,8 @@ export const questionAnswers = [
       { answer: "Zombie", labelWord: "K" },
       { answer: "Minotaur", labelWord: "L" },
       { answer: "Cyclops", labelWord: "M" },
-      { answer: "+ MYOB", labelWord: "N" },
-      { answer: "Sasquatch", labelWord: "O" },
-      { answer: "Just add Mayo", labelWord: "P" },
+      { answer: "+ MYOB, Just add Mayo", labelWord: "N" },
+      { answer: "Sasquatch", labelWord: "O" }
     ],
   },
   {
@@ -38,9 +37,8 @@ export const questionAnswers = [
       { answer: "Lox & Bagel", labelWord: "K" },
       { answer: "PB & J", labelWord: "L" },
       { answer: "Gyro", labelWord: "M" },
-      { answer: "+ MYOB", labelWord: "N" },
-      { answer: "Grilled Cheese", labelWord: "O" },
-      { answer: "Just add Mustard ", labelWord: "P" },
+      { answer: "+ MYOB, Just add Mustard", labelWord: "N" },
+      { answer: "Grilled Cheese", labelWord: "O" }
     ],
   },
   {
@@ -60,9 +58,8 @@ export const questionAnswers = [
       { answer: "Peepers", labelWord: "K" },
       { answer: "Tootsies", labelWord: "L" },
       { answer: "Keister", labelWord: "M" },
-      { answer: "+ MYOB", labelWord: "N" },
-      { answer: "Pecker", labelWord: "O" },
-      { answer: "Just add Relish ", labelWord: "P" },
+      { answer: "+ MYOB, Just add Relish ", labelWord: "N" },
+      { answer: "Pecker", labelWord: "O" }
     ],
   },
   {
@@ -82,9 +79,8 @@ export const questionAnswers = [
       { answer: "Boobs", labelWord: "K" },
       { answer: "Temples", labelWord: "L" },
       { answer: "Ear Lobes", labelWord: "M" },
-      { answer: "+ MYOB", labelWord: "N" },
-      { answer: "Lips", labelWord: "O" },
-      { answer: "Just add Salsa", labelWord: "P" },
+      { answer: "+ MYOB, Just add Salsa", labelWord: "N" },
+      { answer: "Lips", labelWord: "O" }
     ],
   },
   {
@@ -104,9 +100,8 @@ export const questionAnswers = [
       { answer: "the next ice age is near", labelWord: "K" },
       { answer: "Dust bunnies are in the corners my bed", labelWord: "L" },
       { answer: "I fart too much", labelWord: "M" },
-      { answer: "+ MYOB", labelWord: "N" },
-      { answer: "My taxes are due EVERY year", labelWord: "O" },
-      { answer: "Just add Pickles", labelWord: "P" },
+      { answer: "+ MYOB , Just add Pickles", labelWord: "N" },
+      { answer: "My taxes are due EVERY year", labelWord: "O" }
     ],
   },
 ];
