@@ -84,36 +84,6 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
                             <span key={index}>{label}</span>
                           ))}
                         </div>
-                        <div className="flex justify-between align-center btn-box">
-                          <div>
-                            <button
-                              className="print-reset-btn btn"
-                              onClick={() => {
-                                // handleReset()
-                                window.location.reload();
-                              }}
-                            >
-                              <span className="btn-icon">
-                                <img src="/images/retry.png" alt="Print Icon" />
-                              </span>
-                              Retry
-                            </button>
-                            <p>It’s SO NOT who I am!</p>
-                          </div>
-
-                          <div className="">
-                            <button
-                              className="print-label-btn btn"
-                              onClick={handlePrint}
-                            >
-                              <span className="btn-icon">
-                                <img src="/images/print.png" alt="Print Icon" />
-                              </span>
-                              Print
-                            </button>
-                            <p>It’s SO who I am!</p>
-                          </div>
-                        </div>
                       </>
                     ) : (
                       <button
@@ -129,6 +99,39 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
                   </div>
                 </div>
               </div>
+
+              {showLabel && (
+                <div className="flex justify-between align-center btn-box">
+                  <div>
+                    <button
+                      className="print-reset-btn btn"
+                      onClick={() => {
+                        // handleReset()
+                        window.location.reload();
+                      }}
+                    >
+                      <span className="btn-icon">
+                        <img src="/images/retry.png" alt="Print Icon" />
+                      </span>
+                      Retry
+                    </button>
+                    <p>It’s SO NOT who I am!</p>
+                  </div>
+
+                  <div className="">
+                    <button
+                      className="print-label-btn btn"
+                      onClick={handlePrint}
+                    >
+                      <span className="btn-icon">
+                        <img src="/images/print.png" alt="Print Icon" />
+                      </span>
+                      Print
+                    </button>
+                    <p>It’s SO who I am!</p>
+                  </div>
+                </div>
+              )}
 
               <div className="hp-intro-steps flex align-center justify-between relative">
                 {labels.map((label, index) => (
