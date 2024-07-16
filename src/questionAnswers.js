@@ -16,7 +16,7 @@ export const questionAnswers = [
       { answer: "Zombie", labelWord: "K" },
       { answer: "Minotaur", labelWord: "L" },
       { answer: "Cyclops", labelWord: "M" },
-      { answer: "+ MYOB, Just add Mayo", labelWord: "N" },
+      { answer: "+ MYOB, Just add Salsa", labelWord: "N" },
       { answer: "Sasquatch", labelWord: "O" }
     ],
   },
@@ -37,7 +37,7 @@ export const questionAnswers = [
       { answer: "Lox & Bagel", labelWord: "K" },
       { answer: "PB & J", labelWord: "L" },
       { answer: "Gyro", labelWord: "M" },
-      { answer: "+ MYOB, Just add Mustard", labelWord: "N" },
+      { answer: "+ MYOB, Just add Salsa", labelWord: "N" },
       { answer: "Grilled Cheese", labelWord: "O" }
     ],
   },
@@ -58,7 +58,7 @@ export const questionAnswers = [
       { answer: "Peepers", labelWord: "K" },
       { answer: "Tootsies", labelWord: "L" },
       { answer: "Keister", labelWord: "M" },
-      { answer: "+ MYOB, Just add Relish ", labelWord: "N" },
+      { answer: "+ MYOB, Just add Salsa ", labelWord: "N" },
       { answer: "Pecker", labelWord: "O" }
     ],
   },
@@ -100,7 +100,7 @@ export const questionAnswers = [
       { answer: "the next ice age is near", labelWord: "K" },
       { answer: "Dust bunnies are in the corners my bed", labelWord: "L" },
       { answer: "I fart too much", labelWord: "M" },
-      { answer: "+ MYOB , Just add Pickles", labelWord: "N" },
+      { answer: "+ MYOB , Just add Salsa", labelWord: "N" },
       { answer: "My taxes are due EVERY year", labelWord: "O" }
     ],
   },
