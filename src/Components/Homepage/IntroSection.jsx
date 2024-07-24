@@ -115,7 +115,7 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
                       </span>
                       Retry
                     </button>
-                    <p>It’s SO NOT who I am!</p>
+                    <p>It’s SO NOT me!</p>
                   </div>
 
                   <div className="">
@@ -128,7 +128,7 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
                       </span>
                       Print
                     </button>
-                    <p>It’s SO who I am!</p>
+                    <p>It’s SO me!</p>
                   </div>
                 </div>
               )}

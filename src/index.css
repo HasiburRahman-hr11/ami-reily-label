@@ -286,6 +286,9 @@ p span {
   font-family: "Noteworthy";
   font-size: 6.5rem;
 }
+.hp-label-box .label-text{
+  padding-bottom: 2rem;
+}
 .print-label-box {
   padding-top: 2rem;
 }
@@ -319,7 +322,7 @@ p span {
 .hp-intro-right .btn-box p {
   font-weight: 600;
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-family: "MyriadPro";
 }
 .print-label-box .btn {
