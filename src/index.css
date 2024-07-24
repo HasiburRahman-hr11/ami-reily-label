@@ -275,7 +275,8 @@ p span {
   border: 7px solid #f15a29;
   border-radius: 4rem;
   padding: 2rem 2rem;
-  width: 52rem;
+  width: max-content;
+  min-width: 52rem;
   min-height: 26rem;
 }
 .hp-label-box h3 {
@@ -333,6 +334,13 @@ p span {
 }
 .hp-intro-steps {
   margin-top: 5rem;
+
+}
+.btn-box,
+.hp-intro-steps{
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hp-intro-steps::before {
   content: "";
@@ -698,6 +706,10 @@ input[type="range"]:focus-visible {
     width: 100%;
     margin-bottom: 7rem;
     padding-right: 0;
+    flex: unset;
+  }
+  .hp-label-box{
+    min-width:unset;
   }
   .question-wrapper {
     width: 100%;

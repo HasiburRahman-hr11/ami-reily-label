@@ -164,12 +164,14 @@ const SingleQuestion = ({
                 console.log(e.target.value);
                 const answerIndex = e.target.value - 1;
                 // const labelWord = questionData.answers[answerIndex].labelWord;
-                let labelWord =
-                  questionData.answers[answerIndex].answer.charAt(0);
+                let labelWord = "";
                 if (
-                  questionData.answers[answerIndex].answer.startsWith("+ MYOB")
+                  questionData.answers[answerIndex].answer.toLowerCase().startsWith("+ myob")
                 ) {
                   labelWord = "+m";
+                } else {
+                  labelWord =
+                    questionData.answers[answerIndex].answer.charAt(0);
                 }
                 handleChange(index, labelWord, e);
                 setValue(e.target.value);
@@ -201,14 +203,14 @@ const SingleQuestion = ({
                 if (labels[index - 1] === null || isComplete) {
                   return;
                 }
+                let labelWord = "";
+                if (answerData.answer.toLowerCase().startsWith("+ myob")) {
+                  labelWord = "+m";
+                } else {
+                  labelWord = answerData.answer.charAt(0);
+                }
 
-                handleLabelClick(
-                  index,
-                  // answerData.labelWord,
-                  answerData.answer.charAt(0),
-                  rangeInput,
-                  i + 1
-                );
+                handleLabelClick(index, labelWord, rangeInput, i + 1);
               }}
               dangerouslySetInnerHTML={{ __html: answerData.answer }}
             ></div>
