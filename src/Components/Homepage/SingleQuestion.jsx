@@ -39,7 +39,7 @@ const SingleQuestion = ({
 
   const handleChange = (index, labelWord, e) => {
     const audio = new Audio("/audio/slider-effect-2.mp3");
-    if(audio){
+    if (audio) {
       audio.play();
     }
 
@@ -164,8 +164,13 @@ const SingleQuestion = ({
                 console.log(e.target.value);
                 const answerIndex = e.target.value - 1;
                 // const labelWord = questionData.answers[answerIndex].labelWord;
-                const labelWord =
+                let labelWord =
                   questionData.answers[answerIndex].answer.charAt(0);
+                if (
+                  questionData.answers[answerIndex].answer.startsWith("+ MYOB")
+                ) {
+                  labelWord = "+m";
+                }
                 handleChange(index, labelWord, e);
                 setValue(e.target.value);
               }}
