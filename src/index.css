@@ -26,6 +26,25 @@
   .print-box .btn-box {
     display: none;
   }
+  body * {
+    visibility: hidden;
+  }
+  #label-to-print,
+  #label-to-print * {
+    visibility: visible;
+  }
+  #label-to-print {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    width: 101.6mm;
+    height: 50.8mm;
+    font-family: "Noteworthy";
+  }
+  #label-to-print .label-text span{
+    font-size: 8rem;
+  }
 }
 * {
   margin: 0;
@@ -286,7 +305,7 @@ p span {
   font-family: "Noteworthy";
   font-size: 6.5rem;
 }
-.hp-label-box .label-text{
+.hp-label-box .label-text {
   padding-bottom: 2rem;
 }
 .print-label-box {
@@ -337,10 +356,9 @@ p span {
 }
 .hp-intro-steps {
   margin-top: 5rem;
-
 }
 .btn-box,
-.hp-intro-steps{
+.hp-intro-steps {
   max-width: 52rem;
   margin-left: auto;
   margin-right: auto;
@@ -711,8 +729,8 @@ input[type="range"]:focus-visible {
     padding-right: 0;
     flex: unset;
   }
-  .hp-label-box{
-    min-width:unset;
+  .hp-label-box {
+    min-width: unset;
   }
   .question-wrapper {
     width: 100%;

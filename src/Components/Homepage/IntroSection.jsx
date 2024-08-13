@@ -74,7 +74,7 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
               }`}
             >
               <div className="print-box" ref={printRef}>
-                <div className="hp-label-box text-center flex justify-center align-center">
+                <div className="hp-label-box text-center flex justify-center align-center" id="label-to-print">
                   <div>
                     <h3 className="">hello, my label is</h3>
                     {showLabel ? (
