@@ -73,7 +73,7 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
                 scrolled ? "scrolled" : ""
               }`}
             >
-              <div className="print-box" ref={printRef}>
+              <div className="print-box" ref={printRef} id="print-box">
                 <div className="hp-label-box text-center flex justify-center align-center" id="label-to-print">
                   <div>
                     <h3 className="">hello, my label is</h3>

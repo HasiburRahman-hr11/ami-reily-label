@@ -38,7 +38,7 @@ const SingleQuestion = ({
   });
 
   const handleChange = (index, labelWord, e) => {
-    const audio = new Audio("/audio/slider-effect-2.mp3");
+    const audio = new Audio("/audio/slider-effect-3.mp3");
     if (audio) {
       audio.play();
     }
@@ -66,7 +66,7 @@ const SingleQuestion = ({
   };
 
   const handleLabelClick = (index, labelWord, input, value) => {
-    const audio = new Audio("/audio/slider-effect-2.mp3");
+    const audio = new Audio("/audio/slider-effect-3.mp3");
     audio.play();
 
     input.classList.add("active");

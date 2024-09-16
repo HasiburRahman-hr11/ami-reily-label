@@ -19,6 +19,16 @@
   font-style: normal;
 }
 @media print {
+  @page {
+    size: 100mm 62mm;
+    margin: 20px 0; /* Remove default margins */
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
   .print-box,
   .print-box * {
     font-family: "Noteworthy";
@@ -33,19 +43,27 @@
   #label-to-print * {
     visibility: visible;
   }
+
   #label-to-print {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 100px;
-    width: 101.6mm;
-    height: 50.8mm;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: auto;
     font-family: "Noteworthy";
+    min-height: auto;
+    min-width: auto;
+    border-radius: 2rem;
+    padding: 1rem 1rem;
   }
-  #label-to-print .label-text span{
-    font-size: 11rem;
+  #label-to-print .label-text span {
+    font-size: 6rem;
+  }
+  #label-to-print h3 {
+    font-size: 3.5rem;
   }
 }
+
 * {
   margin: 0;
   padding: 0;
