@@ -20,8 +20,8 @@
 }
 @media print {
   @page {
-    size: 100mm 62mm;
-    margin: 20px 0; /* Remove default margins */
+    size: 62mm 100mm;
+    margin: 0; /* Remove default margins */
   }
   html,
   body {
@@ -46,21 +46,22 @@
 
   #label-to-print {
     position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
+    top:7mm;
+    left: 5%;
+    width: 90%;
     height: auto;
     font-family: "Noteworthy";
     min-height: auto;
     min-width: auto;
     border-radius: 2rem;
+    border: 4px solid #f15a29;
     padding: 1rem 1rem;
   }
   #label-to-print .label-text span {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   #label-to-print h3 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 }
 
