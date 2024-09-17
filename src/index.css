@@ -373,6 +373,33 @@ p span {
 .print-box {
   padding: 2rem;
 }
+.pdf-btn-wrapper{
+  margin-top: 30px;
+  text-align: center;
+}
+.pdf-btn-wrapper button{
+  padding: 1.5rem 3rem;
+  border: 2px solid #f15a29;
+  background-color: transparent;
+  color: #f15a29;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 4rem;
+  transition: all 0.5s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.pdf-btn-wrapper button img{
+  max-width: 2.3rem;
+  object-fit: contain;
+  display: inline-block;
+  margin-right: 5px;
+}
+.pdf-btn-wrapper button:hover{
+  border-color: #f5c08f;
+  background-color: #f5c08f;
+}
 .hp-intro-steps {
   margin-top: 5rem;
 }

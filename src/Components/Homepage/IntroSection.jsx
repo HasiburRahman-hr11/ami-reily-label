@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 import { useReactToPrint } from "react-to-print";
 import { questionAnswers } from "../../questionAnswers";
@@ -44,11 +46,36 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
     content: () => printRef.current,
   });
 
-  const handleReset = () => {
-    setIsComplete(false);
-    setShowLabel(false);
-    setLabels(new Array(questionAnswers.length).fill(null));
+  const downloadPDF = () => {
+    const input = printRef.current;
+    html2canvas(input, { scale: 2 }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+
+      // Get dimensions of the canvas and PDF
+      const imgWidth = 210; // A4 width in mm
+      const pageHeight = 297; // A4 height in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      // Add the image data to the PDF
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      // Handle multi-page if needed
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      // Download the PDF
+      pdf.save("my-label.pdf");
+    });
   };
+
   return (
     <>
       <section className="bg-white hp-intro-section">
@@ -74,7 +101,10 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
               }`}
             >
               <div className="print-box" ref={printRef} id="print-box">
-                <div className="hp-label-box text-center flex justify-center align-center" id="label-to-print">
+                <div
+                  className="hp-label-box text-center flex justify-center align-center"
+                  id="label-to-print"
+                >
                   <div>
                     <h3 className="">hello, my label is</h3>
                     {showLabel ? (
@@ -101,36 +131,44 @@ const IntroSection = ({ labels, setIsComplete, setLabels }) => {
               </div>
 
               {showLabel && (
-                <div className="flex justify-between align-center btn-box">
-                  <div>
-                    <button
-                      className="print-reset-btn btn"
-                      onClick={() => {
-                        // handleReset()
-                        window.location.reload();
-                      }}
-                    >
-                      <span className="btn-icon">
-                        <img src="/images/retry.png" alt="Print Icon" />
-                      </span>
-                      Retry
-                    </button>
-                    <p>It’s SO NOT me!</p>
+                <>
+                  <div className="flex justify-between align-center btn-box">
+                    <div>
+                      <button
+                        className="print-reset-btn btn"
+                        onClick={() => {
+                          window.location.reload();
+                        }}
+                      >
+                        <span className="btn-icon">
+                          <img src="/images/retry.png" alt="Print Icon" />
+                        </span>
+                        Retry
+                      </button>
+                      <p>It’s SO NOT me!</p>
+                    </div>
+
+                    <div className="">
+                      <button
+                        className="print-label-btn btn"
+                        onClick={handlePrint}
+                      >
+                        <span className="btn-icon">
+                          <img src="/images/print.png" alt="Print Icon" />
+                        </span>
+                        Print
+                      </button>
+                      <p>It’s SO me!</p>
+                    </div>
                   </div>
 
-                  <div className="">
-                    <button
-                      className="print-label-btn btn"
-                      onClick={handlePrint}
-                    >
-                      <span className="btn-icon">
-                        <img src="/images/print.png" alt="Print Icon" />
-                      </span>
-                      Print
+                  <div className="pdf-btn-wrapper">
+                    <button className="download-pdf-btn" onClick={downloadPDF}>
+                      <img src="/images/pdf.png" alt="" />
+                      <span>Download PDF</span>
                     </button>
-                    <p>It’s SO me!</p>
                   </div>
-                </div>
+                </>
               )}
 
               <div className="hp-intro-steps flex align-center justify-between relative">
